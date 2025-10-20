@@ -1,0 +1,92 @@
+
+/* This stylesheet contain all classes i give  the name like components it's because a want to make easy my site to understend */
+
+
+/* here i will define somme  values for my breack point where i'm gonna use somme classe give then a name to make one more time  easy my page to understand  */
+
+/* Grid templed-columns   3 diferent values on my website*/
+
+/* secund one is give a nother class when the elements is not fitt int o the page  */
+
+
+/* Creating class to assign to some elements */
+/* This class has name rounded 5 it's and is carret a  variable whit content the samme name expl border-radius 5px */
+/* ############ CLASSSES ########### */
+/* Creating class to assign to some elements */
+.rounded-5 {
+  border-radius: var(--rounded-5);
+}
+/* This width is getting full space into  Main content where i have ready to define de grid layout */
+.col-wide {
+  grid-column: 1/ -1;
+  width: 100%;
+  margin: 0 auto !important;
+  box-sizing: border-box;
+}
+
+/* Citacao child elemennts */
+/* COMPONENTS */
+.citacao::after,
+.citacao::before {
+  position: absolute;
+  content: '';
+  width: 40%;
+  height: 40px;
+  display: block;
+  background: var(--amber-500);
+  z-index: -1;
+
+}
+
+.citacao::after {
+  top: -5px;
+  right: -5px;
+  border-radius: 15px 5px 0 0;
+}
+
+.citacao::before {
+  bottom: -5px;
+  left: -5px;
+  border-radius: 0 0 15px 5px;
+}
+
+/* Atributes li getting style */
+
+
+.atributos li:nth-child(1)::before,
+.atributos li:nth-child(2)::before,
+.atributos li:nth-child(3)::before,
+.atributos li:nth-child(4)::before,
+.atributos li:nth-child(5)::before,
+.atributos li:last-child::before {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-7px, -50%);
+
+}
+
+.atributos li:nth-child(1)::before {
+  content: '🕰️';
+}
+
+.atributos li:nth-child(2)::before {
+  content: '🐾';
+}
+
+.atributos li:nth-child(3)::before {
+  content: '♂️';
+}
+
+.atributos li:nth-child(4)::before {
+  content: '🎂';
+}
+
+.atributos li:nth-child(5)::before {
+  content: '♀️';
+}
+
+.atributos li:last-child::before {
+  content: '🧬';
+}

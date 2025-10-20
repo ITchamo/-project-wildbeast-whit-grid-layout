@@ -1,4 +1,6 @@
 @import url(geral.css);
+@import url(breakpoint.css);
+@import url(classes-end-components.css);
 
 * {
   text-decoration: none;
@@ -20,24 +22,41 @@ blockquote {
   --fontDefault: "Vollkorn", Georgia, serif;
   --roxo-p-1: #8844ee;
   --roxo-p-2: #b07dfb;
+  --rounded-3: 3px;
   --rounded-4: 4px;
+  --rounded-5: 5px;
   --linkColor: #f5f5f5;
   --dark-light: rgba(0, 0, 0, .2);
   --dark-light-hover: rgba(0, 0, 0, .5);
   --transition-Default: all .1s ease;
   --transition-ease-out: all .1s ease-out;
   --white: #fff;
-  --white-light: rgba(255,255,255, 0.97);
-  --white-500:#fafbfc;
+  --white-light: rgba(255, 255, 255, 0.97);
+  --white-500: #fafbfc;
   --amber-500: #f3cb18;
-  --dark-secundary:#f4e8e8ad;
+  --dark-secundary: #f4e8e8ad;
   --letter-space: .01rem;
   --linearGrdnt: linear-gradient(135deg, var(--roxo-p-1), var(--roxo-p-2));
   --gutter-30: 30px;
-  --rounded-5: 5px;
-  --shadown-Default:0 5px 12px rgba(0, 0, 0, 0.1);
-  --shadown-Xl:0 6px 16px rgba(44,44,44,0.15);
+  --shadown-Default: 0 5px 12px rgba(0, 0, 0, 0.1);
+  --shadown-Xl: 0 6px 16px rgba(44, 44, 44, 0.15);
   --zoom: zoom .3s linear forwards;
+  /* Grid columns ad gutter */
+  --area-3: 'header header header'
+    'sidenav content anuncios'
+    'footer footer footer';
+  --area-2: 'header header'
+    'sidenav content'
+    'sidenav anuncios'
+    'footer footer';
+  --area-1: 'header'
+    'sidenav'
+    'content'
+    'anuncios'
+    'footer';
+  --grid-3-cols: minmax(160px, 1fr) 3fr 300px;
+  --grid-2-cols: minmax(120px, 1fr) 3fr;
+  --grid-1-cols: 1fr;
 }
 
 body {
@@ -52,7 +71,7 @@ p {
   font-weight: 400 !important;
   font-size: 1.2em;
   letter-spacing: var(--letter-space);
-font-family: var(--fontDefault);
+  font-family: var(--fontDefault);
 }
 
 img {

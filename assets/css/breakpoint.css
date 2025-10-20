@@ -1,0 +1,121 @@
+/*  1200px */
+@media (max-width:75rem) {
+  .estrutura {
+    grid-template-columns: var(--grid-2-cols);
+    grid-template-areas: var(--area-2);
+  }
+
+  .anuncios {
+    align-content: flex-start;
+    grid-area: anuncios;
+    padding: var(--gutter-30);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gutter-30);
+    background: var(--white-500);
+
+  }
+}
+
+
+/* 900px */
+@media (max-width:56.25rem) {
+  .estrutura {
+    grid-template-columns: var(--grid-2-cols);
+    grid-template-areas: var(--area-2);
+  }
+
+  .content {
+    max-width: 800px;
+    padding: 20px;
+    padding-block: 40px;
+  }
+
+  .sidenav {
+    padding: 20px !important;
+  }
+
+  .anuncios {
+    align-content: flex-start;
+    /* writing-mode: vertical-rl    < this property change grid from column layout to vertical layout*/
+
+    direction: rtl;
+  }
+}
+
+/* 768px */
+@media (max-width:48rem) {
+  .estrutura {
+    grid-template-columns: var(--grid-1-cols);
+    grid-template-areas: var(--area-1);
+  }
+
+  .header {
+    padding: 20px 4%;
+    background: linear-gradient(95deg, var(--roxo-p-2), var(--roxo-p-1));
+  }
+
+  /* Hidding nav bar and open button for make nav bar show whit js using function toggle */
+  .header nav {
+    display: none;
+  }
+
+  .header .show--menu {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    right: 0;
+    height: 768px;
+    width: 500px;
+    padding: 80px 0;
+    background: var(--roxo-p-2);
+    z-index: 22;
+  }
+
+  .header .show--menu ul {
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    padding: 40px 0;
+    gap: 30px;
+    width: 100%;
+    height: 100%;
+  }
+    .header .show--menu ul li{
+      width: 100%;
+      padding: 20px 40px;
+    }
+  .header .btn--menu {
+    display: inline-flex;
+  }
+
+  .content {
+    max-width: 800px;
+    padding: 20px;
+    padding-block: 40px;
+  }
+
+  .sidenav {
+    max-width: 600px;
+    padding: 20px !important;
+  }
+
+  .sidenav ul {
+    display: flex;
+    gap: 20px;
+    padding-inline: 20px;
+    padding-left: var(--gutter-30);
+
+    width: 100%;
+    overflow-x: scroll;
+  }
+
+  .anuncios {
+    align-content: flex-start;
+    /* writing-mode: vertical-rl    < this property change grid from column layout to vertical layout*/
+
+    direction: rtl;
+  }
+}

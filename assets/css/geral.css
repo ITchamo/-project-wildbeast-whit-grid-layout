@@ -115,18 +115,19 @@
 
 
 
-
+/* Here a want to explain why a give this space and some margin our gutter  */
+/* so is because i wanna to make my page more easy to understend and make easy in future de refatoring my code have somme 
+padding all might default. values. 30px the name of this value is called --gutter
+margin. all might default values is value also is called --gutter in to my variable defined in to root page style.css  */
 
 
 /* GRID GERAL */
 
 .estrutura {
   display: grid;
-  grid-template-columns: minmax(160px, 1fr) 3fr 300px;
-  grid-template-areas:
-    'header header header'
-    'sidenav content anuncios'
-    'footer footer footer';
+  grid-template-columns: var(--grid-3-cols);
+  /* Includes minmax 1frst element sidenav */
+  grid-template-areas: var(--area-3)
 }
 
 .header {
@@ -141,6 +142,79 @@
 .logo {
   max-width: 200px;
 }
+
+.header .btn--menu {
+  display: none;
+  align-items: center;
+  gap: 4px;
+  max-width: max-content;
+  height: 56px;
+  padding: 8px;
+  border: 0;
+  background: var(--roxo-p-2);
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--white);
+  text-transform: capitalize;
+  font-family: var(--fontDefault);
+  border-radius: var(--rounded-5);
+  box-shadow: 0 0 0 4px var(--roxo-p-1), var(--shadown-Xl);
+  cursor: pointer;
+  z-index: 33;
+}
+
+.header .btn--menu span {
+  display: block;
+  align-self: center;
+  flex-direction: column;
+  transform: rotate(0) translateY(3px);
+  transition: transform .5s;
+  height: 3px;
+  width: 25px;
+  box-shadow: 0 3px var(--white),
+    0 -3px var(--white), 0 -9px var(--white);
+  /* background: #000; */
+  border-radius: var(--rounded-3);
+}
+
+/* This part when button has a class open */
+ .header .btn--menu.open{
+  background: var(--dark-light);
+ }
+.header .btn--menu.open span {
+  transform: rotate(90deg);
+  background: transparent;
+  height: 3px;
+  animation: openMenu .5s linear forwards;
+  box-shadow: 0 3px transparent,
+    0 -3px transparent, 0 -9px transparent;
+    overflow: hidden;
+}
+
+@keyframes openMenu {
+  from {
+    opacity: 0.7;
+    transform: rotate(-90deg) scaleY(2) scale(0) translate3d(30px, 0, 10px);
+
+  }
+
+  to {
+    opacity: 1;
+    height: 6px;
+    transform: rotate(0) scaleY(1) scale(1) translate3d(0, 0, 10px);
+    background: #fff;
+    box-shadow: 0 3px transparent,
+      0 -3px transparent, 0 -9px transparent;
+  }
+}
+
+/* .header .menu:hover span::before,
+.header .menu:hover span::after{
+   background: transparent;
+
+} */
+
+
 
 .header nav ul {
   display: flex;
@@ -205,10 +279,8 @@
 }
 
 .titulo {
-
   align-content: center;
   color: var(--roxo-p-2);
-
 }
 
 .titulo h1 {
@@ -227,7 +299,7 @@
 
 .caracteristicas {
   display: flex;
-align-items: flex-start;
+  align-items: flex-start;
 }
 
 .caracteristicas div {
@@ -272,32 +344,30 @@ align-items: flex-start;
   color: var(--roxo-p-2);
   align-items: center;
   justify-content: center;
-font-size: 1.5rem;
+  font-size: 1.5rem;
   /* border-radius: 0 0 var(--rounded-5) var(--rounded-5); */
   border-radius: var(--rounded-5);
   box-shadow: var(--shadown-Xl);
 }
 
-/* Creating class to assign to some elements */
-.rounded-5 {
-  border-radius: var(--rounded-5);
-}
+
 
 .img-01 {
   grid-row: span 2;
-
+  max-height: 100%;
+  height: 100%;
   /* object-fit: cover; */
+  width: 100%;
   align-self: end;
 
 }
 
 .img-02 {
   align-self: end;
+  width: 100%;
 }
 
-.col-wide {
-  grid-column: 1/ -1;
-}
+
 
 .text-roxo {
   color: var(--roxo-p-2);
@@ -311,31 +381,10 @@ font-size: 1.5rem;
   border-radius: var(--rounded-5);
   color: var(--white-light);
   font-size: 1.3rem;
-}
-
-.citacao::after,
-.citacao::before {
-  position: absolute;
-  content: '';
-  width: 40%;
-  height: 40px;
-  display: block;
-  background: var(--amber-500);
-  z-index: -1;
 
 }
 
-.citacao::after {
-  top: -5px;
-  right: -5px;
-  border-radius: 15px 5px 0 0;
-}
 
-.citacao::before {
-  bottom: -5px;
-  left: -5px;
-  border-radius: 0 0 15px 5px;
-}
 
 .informacoes p+p {
   margin-top: var(--gutter-30);
@@ -362,49 +411,11 @@ font-size: 1.5rem;
   font-size: 1.23em;
   padding-left: 24px;
   border-bottom: 2px solid #bfb9b9a5;
-  /* vertical-align: middle; */
   height: 100%;
   padding-bottom: 0 !important;
   margin-bottom: 0;
 }
 
-.atributos li:nth-child(1)::before,
-.atributos li:nth-child(2)::before,
-.atributos li:nth-child(3)::before,
-.atributos li:nth-child(4)::before,
-.atributos li:nth-child(5)::before,
-.atributos li:last-child::before {
-  display: inline-block;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translate(-7px, -50%);
-
-}
-
-.atributos li:nth-child(1)::before {
-  content: '🕰️';
-}
-
-.atributos li:nth-child(2)::before {
-  content: '🦦';
-}
-
-.atributos li:nth-child(3)::before {
-  content: '♂️';
-}
-
-.atributos li:nth-child(4)::before {
-  content: '🎂';
-}
-
-.atributos li:nth-child(5)::before {
-  content: '♀️';
-}
-
-.atributos li:last-child::before {
-  content: '🐺';
-}
 
 /* Anuncios */
 .anuncios {
