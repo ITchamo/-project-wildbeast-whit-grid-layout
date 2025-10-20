@@ -1,0 +1,62 @@
+@import url(geral.css);
+
+* {
+  text-decoration: none;
+}
+
+body,
+p,
+h1,
+ul,
+li,
+blockquote {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+:root {
+  --fontDefault: "Vollkorn", Georgia, serif;
+  --roxo-p-1: #8844ee;
+  --roxo-p-2: #b07dfb;
+  --rounded-4: 4px;
+  --linkColor: #f5f5f5;
+  --dark-light: rgba(0, 0, 0, .2);
+  --dark-light-hover: rgba(0, 0, 0, .5);
+  --transition-Default: all .1s ease;
+  --transition-ease-out: all .1s ease-out;
+  --white: #fff;
+  --white-light: rgba(255,255,255, 0.97);
+  --white-500:#fafbfc;
+  --amber-500: #f3cb18;
+  --dark-secundary:#f4e8e8ad;
+  --letter-space: .01rem;
+  --linearGrdnt: linear-gradient(135deg, var(--roxo-p-1), var(--roxo-p-2));
+  --gutter-30: 30px;
+  --rounded-5: 5px;
+  --shadown-Default:0 5px 12px rgba(0, 0, 0, 0.1);
+  --shadown-Xl:0 6px 16px rgba(44,44,44,0.15);
+  --zoom: zoom .3s linear forwards;
+}
+
+body {
+  background: rgba(255, 255, 255, .97);
+  font-family: var(--fontDefault);
+  font-optical-sizing: auto;
+}
+
+/* Description line Height */
+p {
+  line-height: 1.6;
+  font-weight: 400 !important;
+  font-size: 1.2em;
+  letter-spacing: var(--letter-space);
+font-family: var(--fontDefault);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+
+}
