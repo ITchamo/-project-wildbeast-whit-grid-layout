@@ -218,6 +218,8 @@ margin. all might default values is value also is called --gutter in to my varia
 
 .header nav ul {
   display: flex;
+  gap: calc(var(--gutter-30) - 15px);
+  align-items: center;
   flex-wrap: wrap;
 }
 
@@ -235,9 +237,9 @@ margin. all might default values is value also is called --gutter in to my varia
   background-color: var(--dark-light-hover);
 }
 
-.header li+li {
+/* .header li+li {
   margin-left: var(--gutter-30);
-}
+} */
 
 /* Side Nav */
 .sidenav {

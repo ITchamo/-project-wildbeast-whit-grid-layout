@@ -43,7 +43,7 @@
   }
 }
 
-/* 768px */
+/* 768px  370px*/
 @media (max-width:48rem) {
   .estrutura {
     grid-template-columns: var(--grid-1-cols);
@@ -68,54 +68,389 @@
     top: 0;
     right: 0;
     height: 768px;
-    width: 500px;
-    padding: 80px 0;
+    max-width: 360px;
+    width: 100%;
+    padding: 40px 10px;
+    box-shadow: var(--shadown-Default), var(--shadown-Xl);
     background: var(--roxo-p-2);
     z-index: 22;
   }
 
   .header .show--menu ul {
     flex-direction: column;
-    align-items: center;
-    align-content: center;
-    padding: 40px 0;
-    gap: 30px;
+    align-items: self-start;
+    padding: 40px 10px;
+    padding-top: 90px;
+    gap: 10px;
     width: 100%;
     height: 100%;
+    box-sizing: border-box;
   }
-    .header .show--menu ul li{
-      width: 100%;
-      padding: 20px 40px;
-    }
+
+  .header .show--menu ul li {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-left: 4px solid rgba(76, 50, 90, 0.024);
+    ;
+    background: rgba(17, 34, 17, 0.024);
+    margin: 0;
+  }
+
+  .header .show--menu ul li a {
+    margin: 0 auto !important;
+    background: transparent;
+  }
+
+  .header .show--menu ul li:hover {
+    background: var(--color-hover-Dark);
+  }
+
   .header .btn--menu {
     display: inline-flex;
   }
 
+  /* VIDEO CONTENT */
   .content {
     max-width: 800px;
+    margin: 0 auto;
     padding: 20px;
     padding-block: 40px;
+    padding: var(--gutter-30);
+    /* grid-template-columns: 1fr 1fr; */
+    gap: 20px;
+
+
   }
+
+  /* CONTENT ELEMENTS */
+  .content .img-01 {
+    grid-row: span 1;
+    /* object-fit: cover; */
+    max-width: 100%;
+    align-self: center;
+
+  }
+
+  /* childrens Contetn #### RESOLVIDO */
+  .content .img-01,
+  .img-02,
+  .img-lg,
+  .text-description,
+  .citacao,
+  .atributos,
+  .informacoes {
+    max-width: 100% !important;
+
+    grid-column: 1/ -1 !important;
+
+    /* grid-column: -1; */
+  }
+
 
   .sidenav {
     max-width: 600px;
     padding: 20px !important;
   }
 
+
+  /* DEPEND */
   .sidenav ul {
     display: flex;
     gap: 20px;
     padding-inline: 20px;
     padding-left: var(--gutter-30);
-
     width: 100%;
     overflow-x: scroll;
+    margin: 0 auto;
+    box-sizing: border-box;
   }
 
+  .sidenav li {
+    flex: 1 0 60px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .header .show--menu ul li a {
+    /* Setting  new value from a link  tah off  mb */
+    margin-inline: 20px;
+    margin-block-start: 30px;
+    margin-block-end: 0px;
+  }
+
+
+  /* Title And h1 */
+  .titulo {
+    align-content: center;
+  }
+
+  .titulo h1 {
+    font-size: 3.5rem
+  }
+
+  .content {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+
+  .content .col-wide {
+    grid-column: 1;
+  }
+
+  .content img {
+    max-width: 500px;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  /* FIXME AND PENDE END */
+  /* Fixando o problema da media query descobri que o a quebra da pagina estava na navaside */
   .anuncios {
+    /* display: none; */
     align-content: flex-start;
     /* writing-mode: vertical-rl    < this property change grid from column layout to vertical layout*/
 
     direction: rtl;
   }
+
+  .caracteristicas {
+    justify-content: center;
+    gap: 20px;
+    height: 190px;
+    padding-block: 20px;
+    /* display: none; */
+  }
+
+  .header {
+    gap: 20px;
+  }
+
+  .sidenav {
+    display: none;
+  }
+}
+
+
+
+
+
+@media (max-width:23rem) {
+  .header {
+    padding: var(--gutter-15) 4%;
+    background: linear-gradient(95deg, var(--roxo-p-2), var(--roxo-p-1));
+  }
+
+
+
+
+
+
+
+
+
+
+  .header .show--menu ul li:hover {
+    background: var(--color-hover-Dark);
+  }
+
+  .header .btn--menu {
+
+    display: inline-flex;
+    height: max-content;
+    max-width: max-content;
+    padding: 10px;
+    z-index: 222;
+  }
+
+
+  .sidenav {
+    max-width: max-content;
+    overflow: hidden;
+    /* padding: 20px !important; */
+    display: block !important;
+  }
+
+
+  /* DEPEND */
+  .sidenav ul {
+    display: flex;
+    gap: 20px;
+    padding-inline: 20px;
+    /* padding-left: var(--gutter-30); */
+    width: 100%;
+    overflow-x: scroll;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .sidenav li {
+    flex: 1 0 60px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .header .show--menu ul li a {
+    /* all: unset; */
+    /* Setting  new value from a link  tah off  mb */
+    margin: 0;
+  }
+
+
+  /* Title And h1 */
+  .titulo {
+    align-content: center;
+    padding: 10px;
+  }
+
+  .titulo h1 {
+    font-size: 3rem
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+    gap: var(--gutter-15);
+  }
+
+  .content .col-wide {
+    grid-column: 1;
+  }
+
+
+
+  /* FIXME AND PENDE END */
+  /* Fixando o problema da media query descobri que o a quebra da pagina estava na navaside */
+  .anuncios {
+    /* display: none; */
+    align-content: flex-start;
+    /* writing-mode: vertical-rl    < this property change grid from column layout to vertical layout*/
+
+    direction: rtl;
+  }
+
+  .caracteristicas {
+    justify-content: center;
+    gap: 10px;
+    height: 120px;
+    padding: 0;
+    margin-bottom: 10px;
+    transform: translateY(-40px);
+    /* display: none; */
+  }
+
+
+
+
+}
+
+@media (max-width:25.5rem) {
+  .header {
+    padding: var(--gutter-15) 4%;
+    background: linear-gradient(95deg, var(--roxo-p-2), var(--roxo-p-1));
+  }
+
+
+
+
+
+
+
+
+
+
+  .header .show--menu ul li:hover {
+    background: var(--color-hover-Dark);
+  }
+
+  .header .btn--menu {
+
+    display: inline-flex;
+    height: max-content;
+    max-width: max-content;
+    padding: 10px;
+    z-index: 222;
+  }
+
+
+  .sidenav {
+    max-width: max-content;
+    overflow: hidden;
+    /* padding: 20px !important; */
+    display: block !important;
+  }
+
+
+  /* DEPEND */
+  .sidenav ul {
+    display: flex;
+    gap: 20px;
+    padding-inline: 20px;
+    /* padding-left: var(--gutter-30); */
+    width: 100%;
+    overflow-x: scroll;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .sidenav li {
+    flex: 1 0 60px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .header .show--menu ul li a {
+    /* all: unset; */
+    /* Setting  new value from a link  tah off  mb */
+    margin: 0;
+  }
+
+
+  /* Title And h1 */
+  .titulo {
+    grid-column: 1/ -1;
+    align-content: center;
+    margin: 0 auto;
+    padding: 10px;
+
+  }
+
+
+  .titulo h1 {
+    margin: 0 auto;
+    font-size: 3.5rem
+  }
+
+
+
+  .content .col-wide {
+    grid-column: 1;
+  }
+
+
+
+  /* FIXME AND PENDE END */
+  /* Fixando o problema da media query descobri que o a quebra da pagina estava na navaside */
+  .anuncios {
+    /* display: none; */
+    align-content: flex-start;
+    /* writing-mode: vertical-rl    < this property change grid from column layout to vertical layout*/
+
+    direction: rtl;
+  }
+
+  .caracteristicas {
+    justify-content: center;
+    gap: 10px;
+    height: 120px;
+    padding: 0;
+    margin-bottom: 10px;
+    transform: translateY(-40px);
+    grid-column: 1 / -1;
+    margin: 0 auto;
+    /* display: none; */
+  }
+
+
+
+
 }

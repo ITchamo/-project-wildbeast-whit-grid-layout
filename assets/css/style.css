@@ -38,8 +38,10 @@ blockquote {
   --letter-space: .01rem;
   --linearGrdnt: linear-gradient(135deg, var(--roxo-p-1), var(--roxo-p-2));
   --gutter-30: 30px;
+  --gutter-15: 15px;
   --shadown-Default: 0 5px 12px rgba(0, 0, 0, 0.1);
   --shadown-Xl: 0 6px 16px rgba(44, 44, 44, 0.15);
+  --color-hover-Dark:rgba(44, 44, 44, 0.15);
   --zoom: zoom .3s linear forwards;
   /* Grid columns ad gutter */
   --area-3: 'header header header'
