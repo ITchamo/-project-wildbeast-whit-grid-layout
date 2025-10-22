@@ -1,5 +1,5 @@
 /*  1200px */
-@media (max-width:75rem) {
+@media (max-width: 75rem) {
   .estrutura {
     grid-template-columns: var(--grid-2-cols);
     grid-template-areas: var(--area-2);
@@ -13,13 +13,11 @@
     grid-template-columns: 1fr 1fr;
     gap: var(--gutter-30);
     background: var(--white-500);
-
   }
 }
 
-
 /* 900px */
-@media (max-width:56.25rem) {
+@media (max-width: 56.25rem) {
   .estrutura {
     grid-template-columns: var(--grid-2-cols);
     grid-template-areas: var(--area-2);
@@ -44,15 +42,21 @@
 }
 
 /* 768px */
-@media (max-width:48rem) {
+@media (max-width: 48rem) {
   .estrutura {
     grid-template-columns: var(--grid-1-cols);
     grid-template-areas: var(--area-1);
   }
 
   .header {
-    padding: 20px 4%;
+    padding: 10px 4%;
     background: linear-gradient(95deg, var(--roxo-p-2), var(--roxo-p-1));
+    grid-column: 1;
+  }
+
+  .header .logo {
+    z-index: 24;
+    transform: scale(0.6) translateX(-70px);
   }
 
   /* Hidding nav bar and open button for make nav bar show whit js using function toggle */
@@ -60,18 +64,65 @@
     display: none;
   }
 
+  #btn--menu {
+    all: unset;
+
+    align-items: center;
+    gap: 4px;
+    max-width: max-content;
+    height: 24px;
+    padding: 8px;
+    border: 0;
+    background: none;
+
+
+    color: var(--white);
+
+    border-radius: none;
+    box-shadow: none;
+    cursor: pointer;
+    text-indent: -1200px;
+    overflow: hidden;
+    transform: translateY(-12px);
+    z-index: 22;
+  }
+
+
+
   .header .show--menu {
     display: flex;
     position: absolute;
-    align-items: center;
-    justify-content: center;
-    top: 0;
+    top: 0px;
     right: 0;
-    height: 768px;
-    width: 500px;
-    padding: 80px 0;
+    height: 0;
+    max-width: 500px;
+    width: 100%;
+    padding: 0 20px;
+    transform: translate3d(0, 200px, 0);
+    transition: .5s;
+    transform-origin: bottom;
     background: var(--roxo-p-2);
     z-index: 22;
+    box-sizing: border-box;
+    overflow: hidden;
+    animation: menuShow .5s linear forwards;
+    box-shadow: 0 4px 9px var(---shadown-Default);
+  }
+
+  @keyframes menuShow {
+    from {
+      opacity: 0;
+      height: 0;
+      padding-top: 5px;
+      transform: translate3d(0, 200px, 0);
+    }
+
+    to {
+      opacity: 1;
+      padding-top: 30px;
+      height: 480px;
+      transform: translate3d(0, 0, 0);
+    }
   }
 
   .header .show--menu ul {
@@ -79,25 +130,80 @@
     align-items: center;
     align-content: center;
     padding: 40px 0;
-    gap: 30px;
+
+    margin: 0 auto;
+    gap: 10px;
     width: 100%;
     height: 100%;
   }
-    .header .show--menu ul li{
-      width: 100%;
-      padding: 20px 40px;
+
+  .header .show--menu ul li {
+    display: flex;
+    width: 100%;
+    margin-inline: 0;
+    padding: 10px 20px;
+
+  }
+
+  .header .show--menu ul li:nth-child(1) {
+    animation: left .25s linear forwards;
+  }
+
+  .header .show--menu ul li:nth-child(2) {
+    animation: left .5s linear forwards .2s;
+  }
+
+  .header .show--menu ul li:nth-child(3) {
+    animation: left 1s linear forwards .3s;
+  }
+
+  @keyframes left {
+    from {
+      opacity: 0;
+      transform: translate3d(200px, 0, 0);
+      padding: 10px 20px;
     }
+
+    to {
+      margin-inline: 0;
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .header .show--menu ul li a {
+    display: block;
+    width: 100%;
+  }
+
   .header .btn--menu {
     display: inline-flex;
   }
 
   .content {
+    grid-template-columns: var(--grid-1-cols);
     max-width: 800px;
     padding: 20px;
     padding-block: 40px;
   }
 
+  .content .titulo {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .titulo h1 {
+    font-size: 3.4rem;
+  }
+
+  .caracteristicas {
+    margin: 0 auto;
+    padding: 10px;
+    transform: translateY(-30px);
+  }
+
   .sidenav {
+    display: none;
     max-width: 600px;
     padding: 20px !important;
   }
