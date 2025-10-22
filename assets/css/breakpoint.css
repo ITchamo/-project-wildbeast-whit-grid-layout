@@ -1,5 +1,5 @@
 /*  1200px */
-@media (max-width:75rem) {
+@media (max-width: 75rem) {
   .estrutura {
     grid-template-columns: var(--grid-2-cols);
     grid-template-areas: var(--area-2);
@@ -13,13 +13,11 @@
     grid-template-columns: 1fr 1fr;
     gap: var(--gutter-30);
     background: var(--white-500);
-
   }
 }
 
-
 /* 900px */
-@media (max-width:56.25rem) {
+@media (max-width: 56.25rem) {
   .estrutura {
     grid-template-columns: var(--grid-2-cols);
     grid-template-areas: var(--area-2);
@@ -43,16 +41,22 @@
   }
 }
 
-/* 768px  370px*/
-@media (max-width:48rem) {
+/* 768px */
+@media (max-width: 48rem) {
   .estrutura {
     grid-template-columns: var(--grid-1-cols);
     grid-template-areas: var(--area-1);
   }
 
   .header {
-    padding: 20px 4%;
+    padding: 10px 4%;
     background: linear-gradient(95deg, var(--roxo-p-2), var(--roxo-p-1));
+    grid-column: 1;
+  }
+
+  .header .logo {
+    z-index: 24;
+    transform: scale(0.6) translateX(-70px);
   }
 
   /* Hidding nav bar and open button for make nav bar show whit js using function toggle */
@@ -60,397 +64,164 @@
     display: none;
   }
 
+  #btn--menu {
+    all: unset;
+
+    align-items: center;
+    gap: 4px;
+    max-width: max-content;
+    height: 24px;
+    padding: 8px;
+    border: 0;
+    background: none;
+
+
+    color: var(--white);
+
+    border-radius: none;
+    box-shadow: none;
+    cursor: pointer;
+    text-indent: -1200px;
+    overflow: hidden;
+    transform: translateY(-12px);
+    z-index: 22;
+  }
+
+
+
   .header .show--menu {
     display: flex;
     position: absolute;
-    align-items: center;
-    justify-content: center;
-    top: 0;
+    top: 0px;
     right: 0;
-    height: 768px;
-    max-width: 360px;
+    height: 0;
+    max-width: 500px;
     width: 100%;
-    padding: 40px 10px;
-    box-shadow: var(--shadown-Default), var(--shadown-Xl);
+    padding: 0 20px;
+    transform: translate3d(0, 200px, 0);
+    transition: .5s;
+    transform-origin: bottom;
     background: var(--roxo-p-2);
     z-index: 22;
+    box-sizing: border-box;
+    overflow: hidden;
+    animation: menuShow .5s linear forwards;
+    box-shadow: 0 4px 9px var(---shadown-Default);
+  }
+
+  @keyframes menuShow {
+    from {
+      opacity: 0;
+      height: 0;
+      padding-top: 5px;
+      transform: translate3d(0, 200px, 0);
+    }
+
+    to {
+      opacity: 1;
+      padding-top: 30px;
+      height: 480px;
+      transform: translate3d(0, 0, 0);
+    }
   }
 
   .header .show--menu ul {
     flex-direction: column;
-    align-items: self-start;
-    padding: 40px 10px;
-    padding-top: 90px;
+    align-items: center;
+    align-content: center;
+    padding: 40px 0;
+
+    margin: 0 auto;
     gap: 10px;
     width: 100%;
     height: 100%;
-    box-sizing: border-box;
   }
 
   .header .show--menu ul li {
+    display: flex;
     width: 100%;
-    padding: 10px;
-    box-sizing: border-box;
-    border-left: 4px solid rgba(76, 50, 90, 0.024);
-    ;
-    background: rgba(17, 34, 17, 0.024);
-    margin: 0;
+    margin-inline: 0;
+    padding: 10px 20px;
+
+  }
+
+  .header .show--menu ul li:nth-child(1) {
+    animation: left .25s linear forwards;
+  }
+
+  .header .show--menu ul li:nth-child(2) {
+    animation: left .5s linear forwards .2s;
+  }
+
+  .header .show--menu ul li:nth-child(3) {
+    animation: left 1s linear forwards .3s;
+  }
+
+  @keyframes left {
+    from {
+      opacity: 0;
+      transform: translate3d(200px, 0, 0);
+      padding: 10px 20px;
+    }
+
+    to {
+      margin-inline: 0;
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
   }
 
   .header .show--menu ul li a {
-    margin: 0 auto !important;
-    background: transparent;
-  }
-
-  .header .show--menu ul li:hover {
-    background: var(--color-hover-Dark);
+    display: block;
+    width: 100%;
   }
 
   .header .btn--menu {
     display: inline-flex;
   }
 
-  /* VIDEO CONTENT */
   .content {
+    grid-template-columns: var(--grid-1-cols);
     max-width: 800px;
-    margin: 0 auto;
     padding: 20px;
     padding-block: 40px;
-    padding: var(--gutter-30);
-    /* grid-template-columns: 1fr 1fr; */
-    gap: 20px;
-
-
   }
 
-  /* CONTENT ELEMENTS */
-  .content .img-01 {
-    grid-row: span 1;
-    /* object-fit: cover; */
-    max-width: 100%;
-    align-self: center;
-
+  .content .titulo {
+    padding: 10px;
+    gap: 10px;
   }
 
-  /* childrens Contetn #### RESOLVIDO */
-  .content .img-01,
-  .img-02,
-  .img-lg,
-  .text-description,
-  .citacao,
-  .atributos,
-  .informacoes {
-    max-width: 100% !important;
-
-    grid-column: 1/ -1 !important;
-
-    /* grid-column: -1; */
+  .titulo h1 {
+    font-size: 3.4rem;
   }
 
+  .caracteristicas {
+    margin: 0 auto;
+    padding: 10px;
+    transform: translateY(-30px);
+  }
 
   .sidenav {
+    display: none;
     max-width: 600px;
     padding: 20px !important;
   }
 
-
-  /* DEPEND */
   .sidenav ul {
     display: flex;
     gap: 20px;
     padding-inline: 20px;
     padding-left: var(--gutter-30);
+
     width: 100%;
     overflow-x: scroll;
-    margin: 0 auto;
-    box-sizing: border-box;
   }
 
-  .sidenav li {
-    flex: 1 0 60px;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  .header .show--menu ul li a {
-    /* Setting  new value from a link  tah off  mb */
-    margin-inline: 20px;
-    margin-block-start: 30px;
-    margin-block-end: 0px;
-  }
-
-
-  /* Title And h1 */
-  .titulo {
-    align-content: center;
-  }
-
-  .titulo h1 {
-    font-size: 3.5rem
-  }
-
-  .content {
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-  }
-
-  .content .col-wide {
-    grid-column: 1;
-  }
-
-  .content img {
-    max-width: 500px;
-    object-fit: cover;
-    width: 100%;
-  }
-
-  /* FIXME AND PENDE END */
-  /* Fixando o problema da media query descobri que o a quebra da pagina estava na navaside */
   .anuncios {
-    /* display: none; */
     align-content: flex-start;
     /* writing-mode: vertical-rl    < this property change grid from column layout to vertical layout*/
 
     direction: rtl;
   }
-
-  .caracteristicas {
-    justify-content: center;
-    gap: 20px;
-    height: 190px;
-    padding-block: 20px;
-    /* display: none; */
-  }
-
-  .header {
-    gap: 20px;
-  }
-
-  .sidenav {
-    display: none;
-  }
-}
-
-
-
-
-
-@media (max-width:23rem) {
-  .header {
-    padding: var(--gutter-15) 4%;
-    background: linear-gradient(95deg, var(--roxo-p-2), var(--roxo-p-1));
-  }
-
-
-
-
-
-
-
-
-
-
-  .header .show--menu ul li:hover {
-    background: var(--color-hover-Dark);
-  }
-
-  .header .btn--menu {
-
-    display: inline-flex;
-    height: max-content;
-    max-width: max-content;
-    padding: 10px;
-    z-index: 222;
-  }
-
-
-  .sidenav {
-    max-width: max-content;
-    overflow: hidden;
-    /* padding: 20px !important; */
-    display: block !important;
-  }
-
-
-  /* DEPEND */
-  .sidenav ul {
-    display: flex;
-    gap: 20px;
-    padding-inline: 20px;
-    /* padding-left: var(--gutter-30); */
-    width: 100%;
-    overflow-x: scroll;
-    margin: 0 auto;
-    box-sizing: border-box;
-  }
-
-  .sidenav li {
-    flex: 1 0 60px;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  .header .show--menu ul li a {
-    /* all: unset; */
-    /* Setting  new value from a link  tah off  mb */
-    margin: 0;
-  }
-
-
-  /* Title And h1 */
-  .titulo {
-    align-content: center;
-    padding: 10px;
-  }
-
-  .titulo h1 {
-    font-size: 3rem
-  }
-
-  .content {
-    grid-template-columns: 1fr;
-    gap: var(--gutter-15);
-  }
-
-  .content .col-wide {
-    grid-column: 1;
-  }
-
-
-
-  /* FIXME AND PENDE END */
-  /* Fixando o problema da media query descobri que o a quebra da pagina estava na navaside */
-  .anuncios {
-    /* display: none; */
-    align-content: flex-start;
-    /* writing-mode: vertical-rl    < this property change grid from column layout to vertical layout*/
-
-    direction: rtl;
-  }
-
-  .caracteristicas {
-    justify-content: center;
-    gap: 10px;
-    height: 120px;
-    padding: 0;
-    margin-bottom: 10px;
-    transform: translateY(-40px);
-    /* display: none; */
-  }
-
-
-
-
-}
-
-@media (max-width:25.5rem) {
-  .header {
-    padding: var(--gutter-15) 4%;
-    background: linear-gradient(95deg, var(--roxo-p-2), var(--roxo-p-1));
-  }
-
-
-
-
-
-
-
-
-
-
-  .header .show--menu ul li:hover {
-    background: var(--color-hover-Dark);
-  }
-
-  .header .btn--menu {
-
-    display: inline-flex;
-    height: max-content;
-    max-width: max-content;
-    padding: 10px;
-    z-index: 222;
-  }
-
-
-  .sidenav {
-    max-width: max-content;
-    overflow: hidden;
-    /* padding: 20px !important; */
-    display: block !important;
-  }
-
-
-  /* DEPEND */
-  .sidenav ul {
-    display: flex;
-    gap: 20px;
-    padding-inline: 20px;
-    /* padding-left: var(--gutter-30); */
-    width: 100%;
-    overflow-x: scroll;
-    margin: 0 auto;
-    box-sizing: border-box;
-  }
-
-  .sidenav li {
-    flex: 1 0 60px;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  .header .show--menu ul li a {
-    /* all: unset; */
-    /* Setting  new value from a link  tah off  mb */
-    margin: 0;
-  }
-
-
-  /* Title And h1 */
-  .titulo {
-    grid-column: 1/ -1;
-    align-content: center;
-    margin: 0 auto;
-    padding: 10px;
-
-  }
-
-
-  .titulo h1 {
-    margin: 0 auto;
-    font-size: 3.5rem
-  }
-
-
-
-  .content .col-wide {
-    grid-column: 1;
-  }
-
-
-
-  /* FIXME AND PENDE END */
-  /* Fixando o problema da media query descobri que o a quebra da pagina estava na navaside */
-  .anuncios {
-    /* display: none; */
-    align-content: flex-start;
-    /* writing-mode: vertical-rl    < this property change grid from column layout to vertical layout*/
-
-    direction: rtl;
-  }
-
-  .caracteristicas {
-    justify-content: center;
-    gap: 10px;
-    height: 120px;
-    padding: 0;
-    margin-bottom: 10px;
-    transform: translateY(-40px);
-    grid-column: 1 / -1;
-    margin: 0 auto;
-    /* display: none; */
-  }
-
-
-
-
 }
