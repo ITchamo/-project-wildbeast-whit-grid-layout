@@ -192,6 +192,10 @@
     gap: 10px;
   }
 
+  .content .img-01 {
+    max-height: fit-content;
+  }
+
   .titulo h1 {
     font-size: 3.4rem;
   }
