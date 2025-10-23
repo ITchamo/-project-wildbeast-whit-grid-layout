@@ -194,6 +194,8 @@
 
   .content .img-01 {
     max-height: fit-content;
+    grid-row: 1;
+    grid-column: 1;
   }
 
   .titulo h1 {
