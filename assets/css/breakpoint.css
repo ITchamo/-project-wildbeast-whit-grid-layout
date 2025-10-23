@@ -193,9 +193,10 @@
   }
 
   .content .img-01 {
-    max-height: fit-content;
+    max-height: 100%;
     grid-row: 1;
     grid-column: 1;
+    object-fit: cover;
   }
 
   .titulo h1 {
